@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 
-if __name__ == '__main__':
-    rem = sys.argv
-    o_rem = len(rem)
-    sum = 0
 
-    if o_rem > 1:
-        for i in range(1, o_rem):
-            sum += int(rem[i])
+def main():
+    result = 0
+    if (len(argv) == 1):
+        result = 0
+    else:
+        for i in argv[1:]:
+            result += int(i)
+    print(result)
 
-    print(sum)
+
+if __name__ == "__main__":
+    main()
