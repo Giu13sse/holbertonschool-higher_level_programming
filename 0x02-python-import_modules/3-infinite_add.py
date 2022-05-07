@@ -1,15 +1,13 @@
 #!/usr/bin/python3
 import sys
 
-
-def main(*argv):
-    l = len(sys.argv)
+if __name__ == '__main__':
+    rem = sys.argv
+    o_rem = len(rem)
     sum = 0
-    if l > 1:
-        for args in sys.argv:
-            if args != sys.argv[0]:
-                sum = sum + int(args)
-    print(sum)
 
-if __name__ == "__main__":
-    main()
+    if o_rem > 1:
+        for i in range(1, o_rem):
+            sum += int(rem[i])
+
+    print(sum)
