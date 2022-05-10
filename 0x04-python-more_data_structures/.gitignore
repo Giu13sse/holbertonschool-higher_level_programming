@@ -1,1 +1,6 @@
-.gitignore
+*.gitignore
+_pycache_
+__pycha
+__pycache__/
+*11.main.py
+
