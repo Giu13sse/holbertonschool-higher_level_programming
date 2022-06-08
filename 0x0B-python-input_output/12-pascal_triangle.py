@@ -1,30 +1,21 @@
 #!/usr/bin/python3
+"""Pascal's triangle
 """
-Class Module
-"""
 
 
-class Student:
-    """
-    Student class
-    """
-
-    def __init__(self, first_name, last_name, age):
-        """initialize method
-        """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-
-    def to_json(self, attrs=None):
-        """retrieves a dictionary representation of student instance
-        args:
-            attrs: attributes
-        return:
-            dictionary
-        """
-        if not attrs:
-            return self.__dict__
-
-        return ({key: value for key, value in self.__dict__.items()
-                 if key in attrs})
+def pascal_triangle(n):
+    """returns a list of intergers representing the
+    pascal's triangle of n"""
+    if n <= 0:
+        return []
+    a = [[] for i in range(n)]
+    for i in range(n):
+        for j in range(i + 1):
+            if j < i:
+                if j == 0:
+                    a[i].append(1)
+                else:
+                    a[i].append(a[i - 1][j] + a[i - 1][j - 1])
+            elif j == i:
+                a[i].append(1)
+    return a
